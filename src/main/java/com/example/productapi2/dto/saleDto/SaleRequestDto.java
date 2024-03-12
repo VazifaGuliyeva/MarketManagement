@@ -6,21 +6,25 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
+@Builder
 public class SaleRequestDto {
 
-    String name;
+    String productName;
     Long deliveryDate;
     Long paymentDate;
-
     BigDecimal quantity;
+    String unit;
     BigDecimal vat;
     BigDecimal price;
-//    Integer fkProductId;
-    Warehouse fkWarehouseId;
+    String fkProductId;
+    String fkWarehouseId;
+    String productCategory;
+
 }

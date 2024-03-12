@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface WarehouseRepository extends JpaRepository<Warehouse,Integer> {
-    List<Object> findById(Warehouse fkWarehouseId);
+public interface WarehouseRepository extends JpaRepository<Warehouse,String > {
+//    List<Object> findById(Warehouse fkWarehouseId);
 }

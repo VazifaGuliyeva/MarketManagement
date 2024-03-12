@@ -1,6 +1,6 @@
 package com.example.productapi2.controller;
 
-import com.example.productapi2.dto.WarehouseDto;
+import com.example.productapi2.dto.warehouseDto.WarehouseDto;
 import com.example.productapi2.service.impl.WarehouseImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ public class WarehouseController {
     }
 
     @GetMapping("/{id}")
-    public WarehouseDto getSaleById(@PathVariable int id){
+    public WarehouseDto getSaleById(@PathVariable String id){
         return warehouseImpl.getWarehouseById(id);
     }
     @PostMapping
@@ -28,7 +28,7 @@ public class WarehouseController {
         warehouseImpl.addWarehouse(warehouseDto);
     }
     @DeleteMapping("/{id}")
-    public void deleteWarehouse(@PathVariable int id){
+    public void deleteWarehouse(@PathVariable String id){
         warehouseImpl.deleteWarehouse(id);
     }
 }

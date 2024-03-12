@@ -1,6 +1,7 @@
 package com.example.productapi2.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,36 +9,21 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.GenericGenerator;
 
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.UUID;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Entity(name="warehouses")
-public class Warehouse {
-
+@Entity(name="users")
+public class User {
 
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     String id;
-    String responsiblePerson;
-    String productNo;
-    String productName;
-    String isActive;
-    BigDecimal quantity;
-    Integer productGroup;
-    Integer productCategory;
-    BigDecimal vat;
-    BigDecimal initialPrice;
-    Long expireDate;
-    Integer fkCategoryId;
-    Long inputDate;
+    @Email
+    String email;
 
-
-    String fkProductId;
-
+    String pasword;
+    @Column(name="phone_number")
+    String phonenumber;
 }

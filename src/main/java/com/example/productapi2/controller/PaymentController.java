@@ -1,7 +1,6 @@
 package com.example.productapi2.controller;
 
-import com.example.productapi2.dto.PaymentDto;
-import com.example.productapi2.entity.Payment;
+import com.example.productapi2.dto.PaymentDto.PaymentRequestDto;
 import com.example.productapi2.service.impl.PaymentImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -9,26 +8,21 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@AllArgsConstructor
 @RequestMapping("/api/payments")
+@AllArgsConstructor
 public class PaymentController {
+
 
     private final PaymentImpl paymentImpl;
 
+
     @GetMapping
-    public List<PaymentDto> getAll(){
-         return paymentImpl.getAll();
-    }
-    @GetMapping("/{id}")
-    public PaymentDto getById(@PathVariable int id){
-        return paymentImpl.getById(id);
+    public List<PaymentRequestDto> getAll(){
+        return paymentImpl.getAll();
     }
     @PostMapping
-    public void addPayment(@RequestBody PaymentDto paymentDto){
-        paymentImpl.savePayment(paymentDto);
+    public void savePayment(@RequestBody PaymentRequestDto paymentRequestDto){
+        paymentImpl.savePayment(paymentRequestDto);
     }
-    @DeleteMapping("/{id}")
-    public void deletePAyment(int id){
-        paymentImpl.deletePayment(id);
-    }
+
 }

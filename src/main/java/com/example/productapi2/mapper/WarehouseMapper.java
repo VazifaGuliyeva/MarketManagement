@@ -1,6 +1,6 @@
 package com.example.productapi2.mapper;
 
-import com.example.productapi2.dto.WarehouseDto;
+import com.example.productapi2.dto.warehouseDto.WarehouseDto;
 import com.example.productapi2.entity.Warehouse;
 import org.mapstruct.Mapper;
 

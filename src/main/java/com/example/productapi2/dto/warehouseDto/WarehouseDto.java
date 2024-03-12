@@ -1,4 +1,4 @@
-package com.example.productapi2.dto;
+package com.example.productapi2.dto.warehouseDto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -14,18 +14,17 @@ import java.math.BigDecimal;
 public class WarehouseDto {
 
 
-    String responsiblePerson;
     String productNo;
     String productName;
-    String isActive;
     BigDecimal quantity;
-    String productGroup;
-    String productCategory;
     BigDecimal vat;
+    Integer productGroup;
+    String isActive;
+    Integer productCategory;
     BigDecimal initialPrice;
-    Long expireDate;
-//    Integer fkEmployeeId;
     Long inputDate;
+    Long expireDate;
+    String responsiblePerson;
 
 
 

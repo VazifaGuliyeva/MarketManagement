@@ -1,4 +1,4 @@
-package com.example.productapi2.dto;
+package com.example.productapi2.dto.PaymentDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,10 +6,8 @@ import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-public class CompanyDto {
+@NoArgsConstructor
+public class PaymentRequestDto {
 
     String name;
-    String contact;
-    String email;
-    String address;
 }
